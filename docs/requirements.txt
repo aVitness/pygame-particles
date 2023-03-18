@@ -1,3 +1,3 @@
 pygame
 sphinx
-sphinx-sizzle-theme
+furo

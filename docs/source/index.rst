@@ -9,7 +9,9 @@ Welcome to Pygame Particles's documentation!
 .. toctree::
    :maxdepth: 3
 
-   intro.rst
+   installing.rst
+   basics.rst
+   examples.rst
    code.rst
 
 
