@@ -1,20 +1,3 @@
-Examples
-========
-Just particles
-~~~~~~~~~~~~~~
+This file is generated on docs building.
 
-
-This is an example of full code with particles
-
-.. literalinclude:: ../../examples/1.py
-   :language: python3
-
-Mouse particles
-~~~~~~~~~~~~~~~
-
-
-Particles appearing on mouse position
-
-.. literalinclude:: ../../examples/2.py
-   :language: python3
-
+You can look on it's generation in source/conf.py
