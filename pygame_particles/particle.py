@@ -1,9 +1,19 @@
 import random
 import time
-from typing import Callable
-from .shape import Point, Shape, Square
+from typing import Callable, Union
+
 import pygame
 
+from .shape import Point, Shape, Square
+
+
+def rand_number(nrange: Union[Union[int, float], tuple[Union[int, float], Union[int, float]]]) -> Union[int, float]:
+    if isinstance(nrange, (int, float)):
+        return nrange
+    a, b = nrange
+    if isinstance(a, int) and isinstance(b, int):
+        return random.randint(a, b)
+    return random.random() * (b - a) + a
 
 
 class State:
@@ -31,11 +41,12 @@ class Particle:
     :param life_iterations: After that amount of iterations particle will turn into fading
     :param fade_iterations: After that amount of iterations particle will turn into dead
     :param color: Default pygame color or a function, that takes particle and shape object and returns color
-    :param size_range: Object size range
-    :param speed_range: Move speed range
-    :param rotate_angle_range: Rotate angle range
+    :param size: Object size range
+    :param speed: Move speed range
+    :param rotate_angle: Rotate angle range
     :param width: Pygame drawing width, 0 = filled
     """
+
     def __init__(self,
                  center_x: int,
                  center_y: int,
@@ -45,28 +56,28 @@ class Particle:
                  life_iterations: int = None,
                  fade_iterations: int = None,
                  color: pygame.Color | Callable = "white",
-                 size_range: tuple[int, int] = (3, 3),
-                 speed_range: tuple[int, int] = (1, 1),
-                 rotate_angle_range: tuple[int, int] = (0, 0),
+                 size: Union[Union[int, float], tuple[Union[int, float], Union[int, float]]] = 3,
+                 speed: Union[Union[int, float], tuple[Union[int, float], Union[int, float]]] = 1,
+                 rotate_angle: Union[Union[int, float], tuple[Union[int, float], Union[int, float]]] = 0,
                  width: int = 0,
                  shape_cls: type = Square,
                  ):
         self.objects_count = objects_count
-        self.size_range = size_range
-        self.speed_range = speed_range
+        self.size_range = size
+        self.speed_range = speed
         self.center = Point(center_x, center_y)
         self.life_seconds = life_seconds
         self.fade_seconds = fade_seconds
         self.life_iterations = life_iterations
         self.fade_iterations = fade_iterations
         self.color = color
-        self.rotate_angle_range = rotate_angle_range
+        self.rotate_angle_range = rotate_angle
         self.shape_cls = shape_cls
         self.objects: list[Shape] = [
             shape_cls(
                 Point(center_x, center_y),
-                random.randint(*size_range),
-                random.randint(*speed_range)
+                rand_number(size),
+                rand_number(speed)
             )
             for _ in range(objects_count)
         ]
@@ -106,7 +117,7 @@ class Particle:
         self.iterations += 1
         for obj in self.objects:
             if self.rotate_angle_range:
-                obj.rotate(random.randint(*self.rotate_angle_range))
+                obj.rotate(rand_number(self.rotate_angle_range))
             obj.move()
         if self.percent_completed >= 100:
             self.state += 1

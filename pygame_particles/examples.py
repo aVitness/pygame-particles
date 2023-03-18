@@ -15,9 +15,9 @@ white_cubes = Particle(
     center_y=720 / 4,
     life_seconds=0.6,
     fade_seconds=1,
-    speed_range=(1, 2),
+    speed=(1, 2),
     shape_cls=Square,
-    size_range=(5, 25),
+    size=(5, 25),
     color=white_cubes_color
 )
 
@@ -35,9 +35,9 @@ sunflowers = Particle(
     center_x=1280 / 6 * 3,
     center_y=720 / 4,
     life_seconds=0.8,
-    speed_range=(1, 2),
+    speed=(1, 2),
     shape_cls=Circle,
-    size_range=(1, 5),
+    size=(1, 5),
     color=sunflowers_color
 )
 
@@ -52,9 +52,9 @@ smoke = Particle(
     center_x=1280 / 6 * 5,
     center_y=720 / 4,
     life_seconds=0.7,
-    speed_range=(1, 3),
+    speed=(1, 3),
     shape_cls=Circle,
-    size_range=(10, 60),
+    size=(10, 60),
     objects_count=40,
     color=smoke_color
 )
@@ -71,9 +71,9 @@ triangles = Particle(
     center_x=1280 / 6 * 3,
     center_y=720 / 4 * 3,
     life_seconds=0.8,
-    speed_range=(2, 2),
+    speed=(2, 2),
     shape_cls=Triangle,
-    size_range=(5, 10),
+    size=(5, 10),
     color=triangles_color
 )
 
@@ -89,9 +89,9 @@ bubbles = Particle(
     center_x=1280 / 6 * 5,
     center_y=720 / 4 * 3,
     life_seconds=0.9,
-    speed_range=(1, 2),
+    speed=(1, 2),
     shape_cls=Circle,
-    size_range=(10, 30),
+    size=(10, 30),
     width=2,
     objects_count=20,
     color=bubbles_color

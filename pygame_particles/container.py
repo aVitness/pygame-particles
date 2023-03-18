@@ -31,9 +31,9 @@ class ParticleContainer:
             life_iterations=particle.life_iterations,
             fade_iterations=particle.fade_iterations,
             color=particle.color,
-            size_range=particle.size_range,
-            speed_range=particle.speed_range,
-            rotate_angle_range=particle.rotate_angle_range,
+            size=particle.size_range,
+            speed=particle.speed_range,
+            rotate_angle=particle.rotate_angle_range,
             width=particle.width
         )
 
