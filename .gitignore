@@ -3,6 +3,7 @@
 .idea
 dist
 build
+test.py
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/pycharm

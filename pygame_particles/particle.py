@@ -19,6 +19,7 @@ def rand_number(nrange: Union[Union[int, float], tuple[Union[int, float], Union[
 class State:
     """
     Particle's states
+
     :param alive: 0
     :param fading: 1
     :param dead: 2
