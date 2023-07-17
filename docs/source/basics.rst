@@ -26,10 +26,11 @@ Container is an object which has some methods to make your work easier
    :language: python3
 
 Random in range
-~~~~~~~~~
+~~~~~~~~~~~~~~~
 Particle's speed and size can be a single number or a tuple.
 
 .. code-block:: python3
+
     3 # Just 3
     3.5 # Just 3.5
     (1, 3) # A random integer value in range [1, 3]
